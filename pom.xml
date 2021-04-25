@@ -21,6 +21,7 @@
   <modules>
     <module>parent-boot-2</module>
     <module>general-webapp-dependencies</module>
+    <module>spring5-dependencies</module>
     <module>spring5</module>
   </modules>
 
