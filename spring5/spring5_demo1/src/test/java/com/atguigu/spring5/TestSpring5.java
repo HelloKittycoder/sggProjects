@@ -13,9 +13,9 @@ import org.springframework.core.io.Resource;
 /**
  * Created by shucheng on 2021/4/25 9:38
  */
-public class TestBean {
+public class TestSpring5 {
 
-    private static final Logger LOGGER = LoggerFactory.getLogger(TestBean.class);
+    private static final Logger LOGGER = LoggerFactory.getLogger(TestSpring5.class);
 
     @Test
     public void testBeanFactory() {
@@ -40,5 +40,15 @@ public class TestBean {
         System.out.println(user);
         LOGGER.info("准备调用add方法");
         user.add();
+    }
+
+    @Test
+    public void testBook1() {
+        // 1 加载spring配置文件
+        ApplicationContext context = new ClassPathXmlApplicationContext("bean1.xml"); // 这里会创建对象
+        // 2 获取配置创建的对象
+        Book book = context.getBean("book", Book.class);
+        System.out.println(book);
+        book.testDemo();
     }
 }
