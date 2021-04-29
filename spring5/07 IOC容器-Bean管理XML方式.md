@@ -40,3 +40,29 @@ public class Book {
     <property name="bauthor" value="达摩老祖"/>
 </bean>
 ```
+
+4.第二中注入方式：使用有参数构造进行注入  
+（1）创建类，定义属性，
+```java
+/**
+ * Created by shucheng on 2021/4/28 12:24
+ */
+public class Orders {
+    // 属性
+    private String oname = "";
+    private String address;
+    // 有参数构造
+    public Orders(String oname, String address) {
+        this.oname = oname;
+        this.address = address;
+    }
+}
+```
+（2）在spring配置文件中进行配置  
+```xml
+<!-- 3.有参数构造注入属性 -->
+<bean id="orders" class="com.atguigu.spring5.Orders">
+    <constructor-arg name="oname" value="电脑"/>
+    <constructor-arg name="address" value="China"/>
+</bean>
+```
