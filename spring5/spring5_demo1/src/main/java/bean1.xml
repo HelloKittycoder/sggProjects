@@ -21,4 +21,8 @@
         <constructor-arg name="oname" value="电脑"/>
         <constructor-arg name="address" value="China"/>
     </bean>
+
+    <!-- 2.set方法注入属性 -->
+    <bean id="book2" class="com.atguigu.spring5.Book" p:bname="九阳神功" p:bauthor="无名氏">
+    </bean>
 </beans>

@@ -66,3 +66,20 @@ public class Orders {
     <constructor-arg name="address" value="China"/>
 </bean>
 ```
+
+5.p名称空间注入
+（1）使用p名称空间注入，可以简化基于xml配置方式  
+第一步 添加p名称空间在配置文件中  
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+```
+第二步 进行属性注入，在bean标签里面进行操作  
+```xml
+<!-- 2.set方法注入属性 -->
+<bean id="book2" class="com.atguigu.spring5.Book" p:bname="九阳神功" p:bauthor="无名氏">
+</bean>
+```

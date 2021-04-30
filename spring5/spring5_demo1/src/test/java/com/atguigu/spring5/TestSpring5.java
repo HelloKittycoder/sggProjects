@@ -61,4 +61,14 @@ public class TestSpring5 {
         System.out.println(orders);
         orders.ordersTest();
     }
+
+    @Test
+    public void testBook2() {
+        // 1 加载spring配置文件
+        ApplicationContext context = new ClassPathXmlApplicationContext("bean1.xml"); // 这里会创建对象
+        // 2 获取配置创建的对象
+        Book book = context.getBean("book2", Book.class);
+        System.out.println(book);
+        book.testDemo();
+    }
 }
