@@ -14,6 +14,19 @@
          value：向属性注入的值 -->
         <property name="bname" value="易筋经"/>
         <property name="bauthor" value="达摩老祖"/>
+
+        <!-- null值 -->
+        <!--<property name="address">
+            <null/>
+        </property>-->
+
+        <!-- 属性值包含特殊符号
+         1.把<>进行转义 &lt;&gt;
+         2.把带特殊符号内容写到CDATA -->
+        <property name="address">
+            <!--<value>&lt;&lt;南京&gt;&gt;</value>-->
+            <value><![CDATA[<<南京>>]]></value>
+        </property>
     </bean>
 
     <!-- 3.有参数构造注入属性 -->
