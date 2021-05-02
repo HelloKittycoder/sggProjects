@@ -45,3 +45,74 @@ public class UserService {
 </bean>
 <bean id="userDaoImpl" class="com.atguigu.spring5.dao.UserDaoImpl"></bean>
 ```
+3.注入属性-内部bean  
+（1）一对多关系：部门和员工  
+一个部门有多个员工，一个员工属于一个部门  
+部门是一，员工是多  
+（2）在实体类之间表示一对多关系，员工表示所属部门，使用对象类型属性进行表示  
+```java
+// 部门类
+public class Dept {
+    private String dname;
+    public void setDname(String dname) {
+        this.dname = dname;
+    }
+}
+// 员工类
+public class Emp {
+    private String ename;
+    private String gender;
+    // 员工属于某一个部门，使用对象形式表示
+    private Dept dept;
+    public void setEname(String ename) {
+        this.ename = ename;
+    }
+    public void setGender(String gender) {
+        this.gender = gender;
+    }
+    public void setDept(Dept dept) {
+        this.dept = dept;
+    }
+}
+```
+（3）在spring配置文件中进行配置
+```xml
+<bean id="emp" class="com.atguigu.spring5.bean.Emp">
+    <!-- 设置两个普通属性 -->
+    <property name="ename" value="lucy"/>
+    <property name="gender" value="女"/>
+    <!-- 设置对象类型属性 -->
+    <property name="dept">
+        <!-- 这里id写不写都行 -->
+        <bean id="dept" class="com.atguigu.spring5.bean.Dept">
+            <property name="dname" value="安保部"/>
+        </bean>
+    </property>
+</bean>
+```
+lsc备注：内部bean没有办法重复使用，没法注入到别的bean里，用applicationContext也获取不到  
+4.注入属性-级联赋值  
+（1）写法一：  
+```xml
+<bean id="emp" class="com.atguigu.spring5.bean.Emp">
+    <!-- 设置两个普通属性 -->
+    <property name="ename" value="lucy"/>
+    <property name="gender" value="女"/>
+    <property name="dept" ref="dept"/>
+</bean>
+<bean id="dept" class="com.atguigu.spring5.bean.Dept">
+    <property name="dname" value="财务部"/>
+</bean>
+```
+（2）写法二：  
+```xml
+<bean id="emp" class="com.atguigu.spring5.bean.Emp">
+    <!-- 设置两个普通属性 -->
+    <property name="ename" value="lucy"/>
+    <property name="gender" value="女"/>
+    <property name="dept" ref="dept"/>
+    <property name="dept.dname" value="技术部"/>
+</bean>
+<bean id="dept" class="com.atguigu.spring5.bean.Dept"></bean>
+```
+这种写法需要生成dept的get方法才能使用
