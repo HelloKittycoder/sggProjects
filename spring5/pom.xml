@@ -17,5 +17,6 @@
 
     <modules>
         <module>spring5_demo1</module>
+        <module>spring5_demo2</module>
     </modules>
 </project>
