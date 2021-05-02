@@ -1,4 +1,4 @@
-### IOC（BeanFactory接口）
+#### IOC（BeanFactory接口）
 1.IOC思想基于IOC容器完成，IOC容器底层就是对象工厂  
 2.Spring提供IOC容器的两种实现：  
 （1）BeanFactory：IOC容器基本实现，是Spring内部的使用接口，不提供给开发人员进行使用  
