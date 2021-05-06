@@ -34,5 +34,20 @@
                 <value>MySQL</value>
             </set>
         </property>
+        <!-- 注入list集合类型，值是对象 -->
+        <property name="courseList">
+            <list>
+                <ref bean="course1"/>
+                <ref bean="course2"/>
+            </list>
+        </property>
+    </bean>
+
+    <!-- 创建多个course对象 -->
+    <bean id="course1" class="com.atguigu.spring5.collectiontype.Course">
+        <property name="cname" value="Spring5框架"/>
+    </bean>
+    <bean id="course2" class="com.atguigu.spring5.collectiontype.Course">
+        <property name="cname" value="MyBatis框架"/>
     </bean>
 </beans>

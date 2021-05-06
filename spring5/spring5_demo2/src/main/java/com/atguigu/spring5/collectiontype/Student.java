@@ -18,6 +18,9 @@ public class Student {
     // 4 set集合类型属性
     private Set<String> set;
 
+    // 学生所学多门课程
+    private List<Course> courseList;
+
     public void setCourses(String[] courses) {
         this.courses = courses;
     }
@@ -34,6 +37,10 @@ public class Student {
         this.set = set;
     }
 
+    public void setCourseList(List<Course> courseList) {
+        this.courseList = courseList;
+    }
+
     @Override
     public String toString() {
         return "Student{" +
@@ -41,6 +48,7 @@ public class Student {
                 ", list=" + list +
                 ", map=" + map +
                 ", set=" + set +
+                ", courseList=" + courseList +
                 '}';
     }
 }
