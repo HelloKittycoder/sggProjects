@@ -14,7 +14,7 @@
     </util:list>
 
     <!-- 2.提取list集合类型属性注入使用 -->
-    <bean id="book" class="com.atguigu.spring5.collectiontype.Book">
+    <bean id="book" class="com.atguigu.spring5.collectiontype.Book" scope="prototype">
         <property name="list" ref="bookList"/>
     </bean>
 </beans>
