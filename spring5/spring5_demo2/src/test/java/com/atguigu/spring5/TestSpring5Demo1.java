@@ -1,5 +1,6 @@
 package com.atguigu.spring5;
 
+import com.atguigu.spring5.bean.Orders;
 import com.atguigu.spring5.collectiontype.Book;
 import com.atguigu.spring5.collectiontype.Course;
 import com.atguigu.spring5.collectiontype.Student;
@@ -42,5 +43,19 @@ public class TestSpring5Demo1 {
         // 2 获取配置创建的对象
         Course course = context.getBean("myBean", Course.class);
         System.out.println(course);
+    }
+
+    // 测试bean的生命周期
+    @Test
+    public void testBean4() {
+        // 1 加载spring配置文件
+        // ApplicationContext context = new ClassPathXmlApplicationContext("bean4.xml"); // 这里会创建对象
+        ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("bean4.xml"); // 这里会创建对象
+        // 2 获取配置创建的对象
+        System.out.println("第四步 获取创建的bean实例对象");
+        Orders orders = context.getBean("orders", Orders.class);
+        System.out.println(orders);
+        // 手动让bean实例销毁
+        context.close();
     }
 }
