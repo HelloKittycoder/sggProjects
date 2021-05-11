@@ -1,5 +1,6 @@
 package com.atguigu.spring5;
 
+import com.atguigu.spring5.autowire.Emp;
 import com.atguigu.spring5.bean.Orders;
 import com.atguigu.spring5.collectiontype.Book;
 import com.atguigu.spring5.collectiontype.Course;
@@ -57,5 +58,15 @@ public class TestSpring5Demo1 {
         System.out.println(orders);
         // 手动让bean实例销毁
         context.close();
+    }
+
+    // 测试xml自动装配
+    @Test
+    public void test5() {
+        // 1 加载spring配置文件
+        ApplicationContext context = new ClassPathXmlApplicationContext("bean5.xml"); // 这里会创建对象
+        // 2 获取配置创建的对象
+        Emp emp = context.getBean("emp", Emp.class);
+        System.out.println(emp);
     }
 }
