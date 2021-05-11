@@ -9,6 +9,8 @@ import org.junit.Test;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
+import javax.sql.DataSource;
+
 import static org.junit.Assert.assertNotEquals;
 
 /**
@@ -68,5 +70,15 @@ public class TestSpring5Demo1 {
         // 2 获取配置创建的对象
         Emp emp = context.getBean("emp", Emp.class);
         System.out.println(emp);
+    }
+
+    // 测试引入外部属性文件
+    @Test
+    public void test6() {
+        // 1 加载spring配置文件
+        ApplicationContext context = new ClassPathXmlApplicationContext("bean6.xml"); // 这里会创建对象
+        // 2 获取配置创建的对象
+        DataSource dataSource = context.getBean("dataSource", DataSource.class);
+        System.out.println(dataSource);
     }
 }
