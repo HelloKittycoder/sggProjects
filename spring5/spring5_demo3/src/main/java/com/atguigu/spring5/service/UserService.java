@@ -8,7 +8,7 @@ import org.springframework.stereotype.Component;
  * UserService -- userService
  * Created by shucheng on 2021/5/14 9:51
  */
-@Component(value = "userService") // <bean id="userService" class=""/>
+@Component // <bean id="userService" class=""/>
 public class UserService {
     public void add() {
         System.out.println("service add...");

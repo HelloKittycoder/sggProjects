@@ -31,3 +31,21 @@ public class UserService {
     }
 }
 ```
+4.开启组件扫描细节配置  
+```xml
+<!-- 示例1
+    use-default-filters="false"，表示现在不使用默认filter，自己配置filter
+    context:include-filter，设置扫描哪些内容
+-->
+<context:component-scan base-package="com.atguigu" use-default-filters="false">
+    <context:include-filter type="annotation" expression="org.springframework.stereotype.Controller"/>
+</context:component-scan>
+
+<!-- 示例2
+    下面配置扫描包所有内容
+    context:exclude-filter，设置哪些内容不进行扫描
+-->
+<context:component-scan base-package="com.atguigu">
+    <context:exclude-filter type="annotation" expression="org.springframework.stereotype.Controller"/>
+</context:component-scan>
+```
