@@ -49,3 +49,34 @@ public class UserService {
     <context:exclude-filter type="annotation" expression="org.springframework.stereotype.Controller"/>
 </context:component-scan>
 ```
+5.基于注解方式实现属性注入  
+（1）@Autowired：根据属性类型进行自动装配  
+第一步 创建service和dao对象，在service和dao类添加创建对象注解  
+第二步 在service注入dao对象，在service类添加dao类型属性，在属性上面使用注解  
+```java
+@Service
+public class UserService {
+
+    // 定义dao类型属性
+    // 不需要添加set方法
+    // 添加注入属性注解
+    @Autowired
+    private UserDao userDao;
+
+    public void add() {
+        System.out.println("service add...");
+        userDao.add();
+    }
+}
+```
+（2）@Qualifier：根据属性名称进行注入  
+```java
+// 定义dao类型属性
+// 不需要添加set方法
+// 添加注入属性注解
+@Autowired // 根据类型注入
+@Qualifier(value = "userDaoImpl1") // 根据名称进行注入
+private UserDao userDao;
+```
+（3）@Resource：可以根据类型注入，可以根据名称注入  
+（4）@Value：注入普通类型属性
