@@ -89,3 +89,21 @@ private UserDao userDao;
 @Value(value = "abc")
 private String name;
 ```
+6.完全注解开发  
+（1）创建配置类，替代xml配置文件  
+```java
+@Configuration // 作为配置类，替代xml配置文件
+@ComponentScan(basePackages = {"com.atguigu"})
+public class SpringConfig {
+}
+```
+（2）编写测试类  
+```java
+@Test
+public void testSpringConfig() {
+    ApplicationContext context = new AnnotationConfigApplicationContext(SpringConfig.class);
+    UserService userService = context.getBean("userService", UserService.class);
+    System.out.println(userService);
+    userService.add();
+}
+```

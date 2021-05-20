@@ -1,9 +1,11 @@
 package com.atguigu.spring5;
 
+import com.atguigu.spring5.config.SpringConfig;
 import com.atguigu.spring5.controller.MyController;
 import com.atguigu.spring5.service.UserService;
 import org.junit.Test;
 import org.springframework.context.ApplicationContext;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 /**
@@ -29,5 +31,13 @@ public class TestSpring5Demo1 {
         ApplicationContext context = new ClassPathXmlApplicationContext("bean2.xml");
         MyController myController = context.getBean("myController", MyController.class);
         System.out.println(myController);
+    }
+
+    @Test
+    public void testSpringConfig() {
+        ApplicationContext context = new AnnotationConfigApplicationContext(SpringConfig.class);
+        UserService userService = context.getBean("userService", UserService.class);
+        System.out.println(userService);
+        userService.add();
     }
 }
