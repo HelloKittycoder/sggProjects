@@ -116,4 +116,14 @@ public void before() { // 前置通知
 @Order(1)
 public class PersonProxy
 ```
+7.完全使用注解开发  
+（1）创建配置类，不需要创建xml配置文件  
+```java
+@Configuration
+@ImportResource(value = "classpath:bean2.xml")
+@ComponentScan(basePackages = {"com.atguigu"})
+@EnableAspectJAutoProxy
+public class ConfigAop {
+}
+```
 
