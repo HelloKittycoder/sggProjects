@@ -95,4 +95,25 @@ public class UserProxy {
     }
 }
 ```
+5.相同的切点抽取  
+```java
+// 相同切点抽取
+@Pointcut("execution(* com.atguigu.spring5.aopanno.User.add(..))")
+public void pointdemo() {
+}
+
+// 前置通知
+@Before(value = "pointdemo()")
+public void before() { // 前置通知
+    System.out.println("before......");
+}
+```
+6.有多个增强类对同一个方法进行增强，设置增强类优先级  
+（1）在增强类上面添加注解@Order(数字类型值)，数字类型值越小优先级越高  
+```java
+@Component
+@Aspect
+@Order(1)
+public class PersonProxy
+```
 
