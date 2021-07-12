@@ -20,5 +20,6 @@
         <module>spring5_demo2</module>
         <module>spring5_demo3</module>
         <module>spring5_demo4</module>
+        <module>spring5_demo5</module>
     </modules>
 </project>
