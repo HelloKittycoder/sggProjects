@@ -1,6 +1,7 @@
 package com.atguigu.spring5.service;
 
 import com.atguigu.spring5.dao.BookDao;
+import com.atguigu.spring5.entity.Book;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -13,4 +14,8 @@ public class BookService {
     // 注入dao
     @Autowired
     private BookDao bookDao;
+
+    void addBook(Book book) {
+        bookDao.addBook(book);
+    }
 }
