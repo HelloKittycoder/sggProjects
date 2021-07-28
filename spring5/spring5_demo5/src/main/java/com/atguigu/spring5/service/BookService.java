@@ -18,4 +18,12 @@ public class BookService {
     void addBook(Book book) {
         bookDao.addBook(book);
     }
+
+    void updateBook(Book book) {
+        bookDao.updateBook(book);
+    }
+
+    void deleteBook(String bookId) {
+        bookDao.deleteBook(bookId);
+    }
 }

@@ -25,4 +25,17 @@ public class BookServiceTest {
         bookService.addBook(book);
         System.out.println("添加成功");
     }
+
+    @Test
+    public void updateBook() {
+        Book book = new Book("1", "C++", "b");
+        bookService.updateBook(book);
+        System.out.println("修改成功");
+    }
+
+    @Test
+    public void deleteBook() {
+        bookService.deleteBook("1");
+        System.out.println("删除成功");
+    }
 }

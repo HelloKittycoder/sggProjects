@@ -8,4 +8,8 @@ import com.atguigu.spring5.entity.Book;
 public interface BookDao {
 
     void addBook(Book book);
+
+    void updateBook(Book book);
+
+    void deleteBook(String bookId);
 }
