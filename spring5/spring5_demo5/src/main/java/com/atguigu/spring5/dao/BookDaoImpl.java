@@ -82,4 +82,9 @@ public class BookDaoImpl implements BookDao {
         });*/
         return jdbcTemplate.query(sql, new BeanPropertyRowMapper<>(Book.class));
     }
+
+    @Override
+    public int[] batchUpdate(String sql, List<Object[]> args) {
+        return jdbcTemplate.batchUpdate(sql, args);
+    }
 }

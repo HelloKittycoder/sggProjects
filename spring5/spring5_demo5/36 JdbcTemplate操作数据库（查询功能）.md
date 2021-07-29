@@ -16,7 +16,7 @@ public Integer selectCount() {
 （1）场景：查询图书详情  
 （2）使用JdbcTemplate实现查询对象  
 queryForObject(String sql, RowMapper<T> rowMapper, Object... args)  
-sql：sql语句；rowMapper是接口，针对不同类型数据，使用这个接口的实现类完成数据的封装；sql参数
+sql：sql语句；rowMapper：是接口，针对不同类型数据，使用这个接口的实现类完成数据的封装；args：sql参数
 ```java
 @Override
 public Book selectById(String bookId) {
@@ -28,7 +28,7 @@ public Book selectById(String bookId) {
 （1）场景：查询图书列表  
 （2）使用JdbcTemplate实现查询返回集合  
 query(String sql, RowMapper<T> rowMapper, Object... args)  
-sql：sql语句；rowMapper是接口，针对不同类型数据，使用这个接口的实现类完成数据的封装；sql参数
+sql：sql语句；rowMapper：是接口，针对不同类型数据，使用这个接口的实现类完成数据的封装；args：sql参数
 ```java
 @Override
 public List<Book> selectAll() {

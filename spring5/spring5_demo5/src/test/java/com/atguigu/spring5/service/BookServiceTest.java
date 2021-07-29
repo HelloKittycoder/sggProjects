@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -60,5 +61,35 @@ public class BookServiceTest {
     public void selectAll() {
         List<Book> bookList = bookDao.selectAll();
         System.out.println(bookList);
+    }
+
+    @Test
+    public void batchInsert() {
+        List<Object[]> args = new ArrayList<>();
+        args.add(new String[]{"1", "data1", "s1"});
+        args.add(new String[]{"2", "data2", "s2"});
+        args.add(new String[]{"3", "data3", "s3"});
+        int[] updateArr = bookDao.batchUpdate("insert into t_book values(?, ?, ?)", args);
+        System.out.println(updateArr);
+    }
+
+    @Test
+    public void batchUpdate() {
+        List<Object[]> args = new ArrayList<>();
+        args.add(new String[]{"data1_1", "s1_1", "1"});
+        args.add(new String[]{"data2_1", "s2_1", "2"});
+        args.add(new String[]{"data3_1", "s3_1", "3"});
+        int[] updateArr = bookDao.batchUpdate("update t_book set bookName = ?, bookStatus = ? where bookId = ?", args);
+        System.out.println(updateArr);
+    }
+
+    @Test
+    public void batchDelete() {
+        List<Object[]> args = new ArrayList<>();
+        args.add(new String[]{"1"});
+        args.add(new String[]{"2"});
+        args.add(new String[]{"3"});
+        int[] updateArr = bookDao.batchUpdate("delete from t_book where bookId = ?", args);
+        System.out.println(updateArr);
     }
 }

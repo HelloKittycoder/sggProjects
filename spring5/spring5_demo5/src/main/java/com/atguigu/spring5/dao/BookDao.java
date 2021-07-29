@@ -20,4 +20,6 @@ public interface BookDao {
     Book selectById(String bookId);
 
     List<Book> selectAll();
+
+    int[] batchUpdate(String sql, List<Object[]> args);
 }
