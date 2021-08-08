@@ -22,5 +22,6 @@
         <module>spring5_demo4</module>
         <module>spring5_demo5</module>
         <module>spring5_tx_demo1</module>
+        <module>spring5_new_feature1</module>
     </modules>
 </project>
