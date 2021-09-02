@@ -2,6 +2,7 @@ package com.atguigu.spring5.service;
 
 import com.atguigu.spring5.dao.BookDao;
 import com.atguigu.spring5.entity.Book;
+import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,6 +15,7 @@ import java.util.List;
 /**
  * Created by shucheng on 2021/7/27 9:27
  */
+@Ignore // 这里数据库测试，用到的时候，自己手动执行sql，然后分别运行对应的单元测试
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration("classpath:bean1.xml")
 public class BookServiceTest {
