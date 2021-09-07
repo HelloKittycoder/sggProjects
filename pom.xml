@@ -23,6 +23,7 @@
     <module>general-webapp-dependencies</module>
     <module>spring5-dependencies</module>
     <module>spring5</module>
+    <module>dubbo</module>
   </modules>
 
   <build>
