@@ -19,5 +19,7 @@
         <module>gmall-interface</module>
         <module>user-service-provider</module>
         <module>order-service-consumer</module>
+        <module>boot-user-service-provider</module>
+        <module>boot-order-service-consumer</module>
     </modules>
 </project>

@@ -1,5 +1,6 @@
 package com.atguigu.gmall.service.impl;
 
+import com.alibaba.dubbo.config.annotation.Reference;
 import com.atguigu.gmall.bean.UserAddress;
 import com.atguigu.gmall.service.OrderService;
 import com.atguigu.gmall.service.UserService;
@@ -18,7 +19,8 @@ import java.util.List;
 @Service
 public class OrderServiceImpl implements OrderService {
 
-    @Autowired
+    // @Autowired
+    @Reference
     private UserService userService;
 
     @Override
