@@ -25,6 +25,7 @@
     <module>spring5</module>
     <module>dubbo</module>
     <module>zookeeper</module>
+    <module>juc-atguigu</module>
   </modules>
 
   <build>
