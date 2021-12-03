@@ -10,7 +10,7 @@ import java.util.concurrent.locks.ReentrantLock;
 // 第一步 创建资源类，定义属性和操作方法
 class LTicket {
     private int number = 30;
-    private Lock lock = new ReentrantLock();
+    private Lock lock = new ReentrantLock(true);
     public void sell() {
         // 上锁
         lock.lock();
