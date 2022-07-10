@@ -8,7 +8,7 @@
   <artifactId>sggProjects</artifactId>
   <packaging>pom</packaging>
   <version>1.0-SNAPSHOT</version>
-  <description>尚硅谷</description>
+  <description>尚硅谷（mvn clean package -Dmaven.test.skip=true）</description>
 
   <name>sggProjects</name>
 
@@ -21,6 +21,8 @@
   <modules>
     <module>parent-boot-2</module>
     <module>general-webapp-dependencies</module>
+    <module>common-log4j-config</module>
+    <module>common-log4j2-config</module>
     <module>spring5-dependencies</module>
     <module>spring5</module>
     <module>dubbo</module>

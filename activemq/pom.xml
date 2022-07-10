@@ -6,6 +6,7 @@
 
     <groupId>com.kittycoder</groupId>
     <artifactId>activemq</artifactId>
+    <packaging>pom</packaging>
     <version>1.0-SNAPSHOT</version>
     <description>activemq学习</description>
 
@@ -17,5 +18,11 @@
 
     <modules>
         <module>activemq-basic</module>
+        <module>activemq-spring</module>
+        <module>activemq-pool-spring</module>
+        <module>activemq-boot-queue-producer</module>
+        <module>activemq-boot-queue-consumer</module>
+        <module>activemq-boot-topic-producer</module>
+        <module>activemq-boot-topic-consumer</module>
     </modules>
 </project>
