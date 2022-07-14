@@ -24,5 +24,6 @@
         <module>activemq-boot-queue-consumer</module>
         <module>activemq-boot-topic-producer</module>
         <module>activemq-boot-topic-consumer</module>
+        <module>activemq-advanced</module>
     </modules>
 </project>

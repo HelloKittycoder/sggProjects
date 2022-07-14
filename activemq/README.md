@@ -52,3 +52,14 @@ activemq-boot-queue-producer、activemq-boot-queue-consumer
 activemq-boot-topic-producer、activemq-boot-topic-consumer
 
 主题生产者、消费者（监听器方式）测试-BootTopicProducer、BootTopicConsumer
+
+### activemq高级 activemq-advanced
+
+--- 
+以下JmsProducerAsync、JmsProducerSchedule测试如果要用消费者代码，直接用activemq-basic中的simple/JmsConsumer，改下QUEUE_NAME就能用了
+
+异步投递-JmsProducerAsync
+
+定时投递-JmsProducerSchedule
+
+消息消费的重试机制-JmsProducerRedeliver、JmsConsumerRedeliver
